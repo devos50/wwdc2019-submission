@@ -11,6 +11,12 @@ public class ExplodingCube
     {
         let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
         self.node = SCNNode(geometry: box)
+        let shape = SCNPhysicsShape(geometry: box, options: nil)
+        self.node.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
+        self.node.physicsBody?.categoryBitMask = CubeCategoryBitmask
+        self.node.physicsBody?.collisionBitMask = BulletCategoryBitmask
+        self.node.physicsBody?.contactTestBitMask = BulletCategoryBitmask
+        self.node.physicsBody?.isAffectedByGravity = false
         self.duration = 20
         
         // start timer

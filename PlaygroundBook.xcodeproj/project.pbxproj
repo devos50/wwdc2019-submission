@@ -18,9 +18,15 @@
 		5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		5EF2F9B82054E6FE00191409 /* Sources in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9A52054BBB200191409 /* Sources */; };
+		9F452040223EB1970005B752 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45203F223EB1970005B752 /* Bullet.swift */; };
+		9F452042223EB4ED0005B752 /* pew.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F452041223EB4ED0005B752 /* pew.wav */; };
 		9F7CEC42223E7886008F6D6C /* ExplodingCubesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */; };
 		9F7CEC43223E7886008F6D6C /* ExplodingCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */; };
 		9F7CEC47223E80FA008F6D6C /* tickingbomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */; };
+		9FF96B11223EB8B6009E1068 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B0F223EB8B6009E1068 /* spark.png */; };
+		9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */; };
+		9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF96B13223EBC0F009E1068 /* Defs.swift */; };
+		9FF96B16223EC415009E1068 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B15223EC415009E1068 /* explosion.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -110,9 +116,15 @@
 		5EF2F9A52054BBB200191409 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		5EF2F9AB2054BBF300191409 /* libBook_Sources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBook_Sources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
+		9F45203F223EB1970005B752 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bullet.swift; path = PlaygroundBook/Sources/Bullet.swift; sourceTree = "<group>"; };
+		9F452041223EB4ED0005B752 /* pew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew.wav; sourceTree = "<group>"; };
 		9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExplodingCubesView.swift; path = PlaygroundBook/Sources/ExplodingCubesView.swift; sourceTree = "<group>"; };
 		9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExplodingCube.swift; path = PlaygroundBook/Sources/ExplodingCube.swift; sourceTree = "<group>"; };
 		9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tickingbomb.wav; sourceTree = "<group>"; };
+		9FF96B0F223EB8B6009E1068 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = fireexplosion.scnp; sourceTree = "<group>"; };
+		9FF96B13223EBC0F009E1068 /* Defs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Defs.swift; path = PlaygroundBook/Sources/Defs.swift; sourceTree = "<group>"; };
+		9FF96B15223EC415009E1068 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +195,8 @@
 		5E2A7ADC204F611300F4E17A = {
 			isa = PBXGroup;
 			children = (
+				9FF96B13223EBC0F009E1068 /* Defs.swift */,
+				9F45203F223EB1970005B752 /* Bullet.swift */,
 				9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */,
 				9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */,
 				5E0E37542065A065008FA4BE /* README.md */,
@@ -245,9 +259,13 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				9FF96B15223EC415009E1068 /* explosion.wav */,
+				9F452041223EB4ED0005B752 /* pew.wav */,
 				9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
+				9FF96B0F223EB8B6009E1068 /* spark.png */,
+				9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */,
 			);
 			path = PrivateResources;
 			sourceTree = "<group>";
@@ -373,9 +391,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF96B11223EB8B6009E1068 /* spark.png in Resources */,
+				9F452042223EB4ED0005B752 /* pew.wav in Resources */,
+				9FF96B16223EC415009E1068 /* explosion.wav in Resources */,
 				9F7CEC47223E80FA008F6D6C /* tickingbomb.wav in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
+				9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +450,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */,
+				9F452040223EB1970005B752 /* Bullet.swift in Sources */,
 				9F7CEC42223E7886008F6D6C /* ExplodingCubesView.swift in Sources */,
 				9F7CEC43223E7886008F6D6C /* ExplodingCube.swift in Sources */,
 			);
