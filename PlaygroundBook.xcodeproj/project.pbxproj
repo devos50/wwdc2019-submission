@@ -27,6 +27,10 @@
 		9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */; };
 		9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF96B13223EBC0F009E1068 /* Defs.swift */; };
 		9FF96B16223EC415009E1068 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B15223EC415009E1068 /* explosion.wav */; };
+		9FF96B18223ED3A5009E1068 /* explosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B17223ED3A5009E1068 /* explosion.scnp */; };
+		9FF96B1A223ED420009E1068 /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B19223ED420009E1068 /* tracker.png */; };
+		9FF96B1C223ED6D2009E1068 /* plane_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B1B223ED6D2009E1068 /* plane_grid.png */; };
+		9FF96B1E223ED752009E1068 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF96B1D223ED752009E1068 /* Plane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -125,6 +129,10 @@
 		9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = fireexplosion.scnp; sourceTree = "<group>"; };
 		9FF96B13223EBC0F009E1068 /* Defs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Defs.swift; path = PlaygroundBook/Sources/Defs.swift; sourceTree = "<group>"; };
 		9FF96B15223EC415009E1068 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		9FF96B17223ED3A5009E1068 /* explosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = explosion.scnp; sourceTree = "<group>"; };
+		9FF96B19223ED420009E1068 /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracker.png; sourceTree = "<group>"; };
+		9FF96B1B223ED6D2009E1068 /* plane_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_grid.png; sourceTree = "<group>"; };
+		9FF96B1D223ED752009E1068 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = PlaygroundBook/Sources/Plane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,7 @@
 		5E2A7ADC204F611300F4E17A = {
 			isa = PBXGroup;
 			children = (
+				9FF96B1D223ED752009E1068 /* Plane.swift */,
 				9FF96B13223EBC0F009E1068 /* Defs.swift */,
 				9F45203F223EB1970005B752 /* Bullet.swift */,
 				9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */,
@@ -259,6 +268,9 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				9FF96B1B223ED6D2009E1068 /* plane_grid.png */,
+				9FF96B19223ED420009E1068 /* tracker.png */,
+				9FF96B17223ED3A5009E1068 /* explosion.scnp */,
 				9FF96B15223EC415009E1068 /* explosion.wav */,
 				9F452041223EB4ED0005B752 /* pew.wav */,
 				9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */,
@@ -392,9 +404,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF96B11223EB8B6009E1068 /* spark.png in Resources */,
+				9FF96B18223ED3A5009E1068 /* explosion.scnp in Resources */,
+				9FF96B1C223ED6D2009E1068 /* plane_grid.png in Resources */,
 				9F452042223EB4ED0005B752 /* pew.wav in Resources */,
 				9FF96B16223EC415009E1068 /* explosion.wav in Resources */,
 				9F7CEC47223E80FA008F6D6C /* tickingbomb.wav in Resources */,
+				9FF96B1A223ED420009E1068 /* tracker.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
 				9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */,
@@ -450,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF96B1E223ED752009E1068 /* Plane.swift in Sources */,
 				9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */,
 				9F452040223EB1970005B752 /* Bullet.swift in Sources */,
 				9F7CEC42223E7886008F6D6C /* ExplodingCubesView.swift in Sources */,

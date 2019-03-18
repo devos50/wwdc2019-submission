@@ -3,8 +3,12 @@ import Foundation
 import UIKit
 
 @available(iOS 11.0, *)
-public class ExplodingCubesView: ARSCNView, SCNPhysicsContactDelegate
+public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContactDelegate
 {
+    var tracking = true
+    var foundSurface = false
+    var trackerNode: SCNNode?
+    
     public override init(frame: CGRect, options: [String : Any]? = nil)
     {
         super.init(frame: frame, options: options)
@@ -12,19 +16,23 @@ public class ExplodingCubesView: ARSCNView, SCNPhysicsContactDelegate
         let scene = SCNScene()
         scene.physicsWorld.contactDelegate = self
         self.scene = scene
+        self.delegate = self
         
-        //self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints];
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
         
-        self.session.run(ARWorldTrackingConfiguration())
+        self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints];
+        
+        self.session.run(configuration)
         
         // listen for taps
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ExplodingCubesView.viewTapped(sender: )))
         self.addGestureRecognizer(recognizer)
         
         // add cube
-        let cube = ExplodingCube()
-        cube.node.position = SCNVector3(floatBetween(-0.5, and: 0.5), floatBetween(-0.5, and: 0.5), floatBetween(-0.5, and: 0.5))
-        scene.rootNode.addChildNode(cube.node)
+        //let cube = ExplodingCube()
+        //cube.node.position = SCNVector3(floatBetween(-0.5, and: 0.5), floatBetween(-0.5, and: 0.5), floatBetween(-0.5, and: 0.5))
+        //scene.rootNode.addChildNode(cube.node)
     }
     
     required public init?(coder aDecoder: NSCoder)
@@ -81,10 +89,45 @@ public class ExplodingCubesView: ARSCNView, SCNPhysicsContactDelegate
         cube.runAction(SCNAction.sequence([SCNAction.playAudio(SCNAudioSource(fileNamed: "explosion.wav")!, waitForCompletion: true), SCNAction.removeFromParentNode()]))
         
         // go out with a blast
-        let particleSystem = SCNParticleSystem(named: "fireexplosion", inDirectory: nil)
+        let particleSystem = SCNParticleSystem(named: "explosion", inDirectory: nil)
         let particleNode = SCNNode()
         particleNode.addParticleSystem(particleSystem!)
         particleNode.position = contact.contactPoint
         self.scene.rootNode.addChildNode(particleNode)
     }
+    
+    
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor)
+    {
+        if let planeAnchor = anchor as? ARPlaneAnchor
+        {
+            self.addPlane(node: node, anchor: planeAnchor)
+        }
+    }
+    
+    func addPlane(node: SCNNode, anchor: ARPlaneAnchor)
+    {
+        let plane = Plane(anchor)
+        node.addChildNode(plane)
+    }
+    
+//    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)
+//    {
+//        guard tracking else { return }
+//        let hitTest = self.hitTest(CGPoint(x: self.frame.midX, y: self.frame.midY), types: .featurePoint)
+//        guard let result = hitTest.first else { return }
+//        let translation = SCNMatrix4(result.worldTransform)
+//        let position = SCNVector3Make(translation.m41, translation.m42, translation.m43)
+//
+//        if trackerNode == nil {
+//            let plane = SCNPlane(width: 0.15, height: 0.15)
+//            plane.firstMaterial?.diffuse.contents = UIImage(named: "tracker.png")
+//            plane.firstMaterial?.isDoubleSided = true
+//            trackerNode = SCNNode(geometry: plane)
+//            trackerNode?.eulerAngles.x = -.pi * 0.5
+//            self.scene.rootNode.addChildNode(self.trackerNode!)
+//            foundSurface = true
+//        }
+//        self.trackerNode?.position = position
+//    }
 }
