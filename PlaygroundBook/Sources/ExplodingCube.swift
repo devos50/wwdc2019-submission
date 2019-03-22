@@ -1,44 +1,67 @@
 import ARKit
 
-public class ExplodingCube
+public class ExplodingCube: SCNNode
 {
-    var node: SCNNode
-    var duration: Double
     var updateTimer: Timer!
+    var explodeTime = 3.0
+    var explodeTimer: Timer!
     var ticks = 0
+    var isTicking = false
     
-    public init()
+    public init(size: CGFloat)
     {
-        let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-        self.node = SCNNode(geometry: box)
-        let shape = SCNPhysicsShape(geometry: box, options: nil)
-        self.node.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
-        self.node.physicsBody?.categoryBitMask = CubeCategoryBitmask
-        self.node.physicsBody?.collisionBitMask = BulletCategoryBitmask
-        self.node.physicsBody?.contactTestBitMask = BulletCategoryBitmask
-        self.node.physicsBody?.isAffectedByGravity = false
-        self.duration = 20
+        super.init()
         
-        // start timer
-        self.updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateColor), userInfo: nil, repeats: true)
+        let box = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
+        self.geometry = box
+        self.name = "cube"
+        self.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "dynamite.jpg")
+        let shape = SCNPhysicsShape(geometry: box, options: nil)
+        self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
+        self.physicsBody?.categoryBitMask = CubeCategoryBitmask
+        self.physicsBody?.collisionBitMask = BulletCategoryBitmask | PlaneCategoryBitmask | CubeCategoryBitmask | WallCategoryBitmask
+        self.physicsBody?.contactTestBitMask = BulletCategoryBitmask | PlaneCategoryBitmask
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func startTicking()
+    {
+        if isTicking { return }
         
         // play music
         let musicSource = SCNAudioSource(fileNamed: "tickingbomb.wav")!
-        musicSource.volume = 0.08
-        self.node.runAction(SCNAction.repeatForever(SCNAction.playAudio(musicSource, waitForCompletion: true)))
-    }
-    
-    @objc
-    func updateColor()
-    {
-        ticks += 1
-        let timeLeft = self.duration - Double(ticks) * 0.2
-        let n = 100 - (timeLeft / self.duration * 100)
-        let red = (255 * n) / 100
-        let green = (255 * (100 - n)) / 100
+        musicSource.volume = 0.3
+        self.runAction(SCNAction.repeatForever(SCNAction.playAudio(musicSource, waitForCompletion: true)))
         
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor(red: CGFloat(red / 255.0), green: CGFloat(green / 255.0), blue: CGFloat(0), alpha: 1.0)
+        self.isTicking = true
+        DispatchQueue.main.async {
+            self.updateTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer: Timer) in
+                self.ticks += 1
+                let timeLeft = self.explodeTime - Double(self.ticks) * 0.1
+                //let n = 100 - (timeLeft / self.explodeTime * 100)
+                //let red = (255 * n) / 100
+                //let green = (255 * (100 - n)) / 100
+                
+                let color = UIColor(hue: CGFloat(timeLeft / self.explodeTime / 3), saturation: 1, brightness: 1, alpha: 1)
+                
+                self.geometry?.firstMaterial?.diffuse.contents = color
+            })
+            
+            self.explodeTimer = Timer.scheduledTimer(withTimeInterval: self.explodeTime, repeats: false, block: { (timer: Timer) in
+                // go out with a blast
+                self.parent?.runAction(SCNAction.playAudio(SCNAudioSource(fileNamed: "explosion.wav")!, waitForCompletion: false))
+                let particleSystem = SCNParticleSystem(named: "fireexplosion", inDirectory: nil)
+                let particleNode = SCNNode()
+                particleNode.addParticleSystem(particleSystem!)
+                particleNode.position = self.presentation.position
+                self.parent?.addChildNode(particleNode)
+                self.runAction(SCNAction.sequence([SCNAction.wait(duration: 0.2), SCNAction.removeFromParentNode()]))
+                self.updateTimer.invalidate()
+            })
+        }
+        
     }
-    
-    
 }

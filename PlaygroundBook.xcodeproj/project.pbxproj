@@ -18,19 +18,25 @@
 		5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		5EF2F9B82054E6FE00191409 /* Sources in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9A52054BBB200191409 /* Sources */; };
-		9F452040223EB1970005B752 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45203F223EB1970005B752 /* Bullet.swift */; };
-		9F452042223EB4ED0005B752 /* pew.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F452041223EB4ED0005B752 /* pew.wav */; };
-		9F7CEC42223E7886008F6D6C /* ExplodingCubesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */; };
-		9F7CEC43223E7886008F6D6C /* ExplodingCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */; };
-		9F7CEC47223E80FA008F6D6C /* tickingbomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */; };
-		9FF96B11223EB8B6009E1068 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B0F223EB8B6009E1068 /* spark.png */; };
-		9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */; };
-		9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF96B13223EBC0F009E1068 /* Defs.swift */; };
-		9FF96B16223EC415009E1068 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B15223EC415009E1068 /* explosion.wav */; };
-		9FF96B18223ED3A5009E1068 /* explosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B17223ED3A5009E1068 /* explosion.scnp */; };
-		9FF96B1A223ED420009E1068 /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B19223ED420009E1068 /* tracker.png */; };
-		9FF96B1C223ED6D2009E1068 /* plane_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF96B1B223ED6D2009E1068 /* plane_grid.png */; };
-		9FF96B1E223ED752009E1068 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF96B1D223ED752009E1068 /* Plane.swift */; };
+		9F50A9C12245488B00535F6A /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50A9BB2245488A00535F6A /* Bullet.swift */; };
+		9F50A9C32245488B00535F6A /* ExplodingCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50A9BD2245488B00535F6A /* ExplodingCube.swift */; };
+		9F50A9C42245488B00535F6A /* ExplodingCubesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50A9BE2245488B00535F6A /* ExplodingCubesView.swift */; };
+		9F50A9C52245488B00535F6A /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50A9BF2245488B00535F6A /* Plane.swift */; };
+		9F50A9C62245488B00535F6A /* Defs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50A9C02245488B00535F6A /* Defs.swift */; };
+		9F50A9D32245494100535F6A /* water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9C72245494000535F6A /* water.jpg */; };
+		9F50A9D42245494100535F6A /* starttexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9C82245494000535F6A /* starttexture.png */; };
+		9F50A9D52245494100535F6A /* score.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9C92245494000535F6A /* score.scnp */; };
+		9F50A9D62245494100535F6A /* fireexplosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CA2245494000535F6A /* fireexplosion.scnp */; };
+		9F50A9D72245494100535F6A /* lava.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CB2245494000535F6A /* lava.wav */; };
+		9F50A9D82245494100535F6A /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CC2245494000535F6A /* explosion.wav */; };
+		9F50A9D92245494100535F6A /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CD2245494100535F6A /* smoke.png */; };
+		9F50A9DA2245494100535F6A /* extinguish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CE2245494100535F6A /* extinguish.wav */; };
+		9F50A9DB2245494100535F6A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CF2245494100535F6A /* spark.png */; };
+		9F50A9DC2245494100535F6A /* dynamite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9D02245494100535F6A /* dynamite.jpg */; };
+		9F50A9DD2245494100535F6A /* floortexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9D12245494100535F6A /* floortexture.jpg */; };
+		9F50A9DE2245494100535F6A /* smoke.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9D22245494100535F6A /* smoke.scnp */; };
+		9F50A9E022454BB300535F6A /* tickingbomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9DF22454BB300535F6A /* tickingbomb.wav */; };
+		9F50A9E222454CA500535F6A /* pew.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9E122454CA500535F6A /* pew.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -101,7 +107,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5E086DC02051C5A7004D8D25 /* Exploding Cubes.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Exploding Cubes.playgroundbook"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E086DC02051C5A7004D8D25 /* Your Floor is Lava!.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Your Floor is Lava!.playgroundbook"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
 		5E086DCD2051DDB8004D8D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LiveView.storyboard; sourceTree = "<group>"; };
 		5E086DCF2051DF0F004D8D25 /* Manifest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Manifest.plist; sourceTree = "<group>"; };
@@ -120,19 +126,25 @@
 		5EF2F9A52054BBB200191409 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		5EF2F9AB2054BBF300191409 /* libBook_Sources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBook_Sources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
-		9F45203F223EB1970005B752 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bullet.swift; path = PlaygroundBook/Sources/Bullet.swift; sourceTree = "<group>"; };
-		9F452041223EB4ED0005B752 /* pew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew.wav; sourceTree = "<group>"; };
-		9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExplodingCubesView.swift; path = PlaygroundBook/Sources/ExplodingCubesView.swift; sourceTree = "<group>"; };
-		9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExplodingCube.swift; path = PlaygroundBook/Sources/ExplodingCube.swift; sourceTree = "<group>"; };
-		9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tickingbomb.wav; sourceTree = "<group>"; };
-		9FF96B0F223EB8B6009E1068 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = fireexplosion.scnp; sourceTree = "<group>"; };
-		9FF96B13223EBC0F009E1068 /* Defs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Defs.swift; path = PlaygroundBook/Sources/Defs.swift; sourceTree = "<group>"; };
-		9FF96B15223EC415009E1068 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
-		9FF96B17223ED3A5009E1068 /* explosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = explosion.scnp; sourceTree = "<group>"; };
-		9FF96B19223ED420009E1068 /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracker.png; sourceTree = "<group>"; };
-		9FF96B1B223ED6D2009E1068 /* plane_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_grid.png; sourceTree = "<group>"; };
-		9FF96B1D223ED752009E1068 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = PlaygroundBook/Sources/Plane.swift; sourceTree = "<group>"; };
+		9F50A9BB2245488A00535F6A /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		9F50A9BD2245488B00535F6A /* ExplodingCube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodingCube.swift; sourceTree = "<group>"; };
+		9F50A9BE2245488B00535F6A /* ExplodingCubesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodingCubesView.swift; sourceTree = "<group>"; };
+		9F50A9BF2245488B00535F6A /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		9F50A9C02245488B00535F6A /* Defs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defs.swift; sourceTree = "<group>"; };
+		9F50A9C72245494000535F6A /* water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = water.jpg; sourceTree = "<group>"; };
+		9F50A9C82245494000535F6A /* starttexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starttexture.png; sourceTree = "<group>"; };
+		9F50A9C92245494000535F6A /* score.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = score.scnp; sourceTree = "<group>"; };
+		9F50A9CA2245494000535F6A /* fireexplosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = fireexplosion.scnp; sourceTree = "<group>"; };
+		9F50A9CB2245494000535F6A /* lava.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lava.wav; sourceTree = "<group>"; };
+		9F50A9CC2245494000535F6A /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		9F50A9CD2245494100535F6A /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
+		9F50A9CE2245494100535F6A /* extinguish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = extinguish.wav; sourceTree = "<group>"; };
+		9F50A9CF2245494100535F6A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		9F50A9D02245494100535F6A /* dynamite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dynamite.jpg; sourceTree = "<group>"; };
+		9F50A9D12245494100535F6A /* floortexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floortexture.jpg; sourceTree = "<group>"; };
+		9F50A9D22245494100535F6A /* smoke.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = smoke.scnp; sourceTree = "<group>"; };
+		9F50A9DF22454BB300535F6A /* tickingbomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tickingbomb.wav; sourceTree = "<group>"; };
+		9F50A9E122454CA500535F6A /* pew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +169,7 @@
 		5E086DA4204F706E004D8D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E086DC02051C5A7004D8D25 /* Exploding Cubes.playgroundbook */,
+				5E086DC02051C5A7004D8D25 /* Your Floor is Lava!.playgroundbook */,
 				5EF2F9AB2054BBF300191409 /* libBook_Sources.a */,
 				5EA2E3BD2056F35A00416A35 /* LiveViewTestApp.app */,
 			);
@@ -203,11 +215,6 @@
 		5E2A7ADC204F611300F4E17A = {
 			isa = PBXGroup;
 			children = (
-				9FF96B1D223ED752009E1068 /* Plane.swift */,
-				9FF96B13223EBC0F009E1068 /* Defs.swift */,
-				9F45203F223EB1970005B752 /* Bullet.swift */,
-				9F7CEC41223E7886008F6D6C /* ExplodingCube.swift */,
-				9F7CEC40223E7886008F6D6C /* ExplodingCubesView.swift */,
 				5E0E37542065A065008FA4BE /* README.md */,
 				5E086DC12051C5A7004D8D25 /* PlaygroundBook */,
 				5EA2E3BE2056F35A00416A35 /* LiveViewTestApp */,
@@ -268,16 +275,22 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
-				9FF96B1B223ED6D2009E1068 /* plane_grid.png */,
-				9FF96B19223ED420009E1068 /* tracker.png */,
-				9FF96B17223ED3A5009E1068 /* explosion.scnp */,
-				9FF96B15223EC415009E1068 /* explosion.wav */,
-				9F452041223EB4ED0005B752 /* pew.wav */,
-				9F7CEC46223E80FA008F6D6C /* tickingbomb.wav */,
+				9F50A9E122454CA500535F6A /* pew.wav */,
+				9F50A9DF22454BB300535F6A /* tickingbomb.wav */,
+				9F50A9D02245494100535F6A /* dynamite.jpg */,
+				9F50A9CA2245494000535F6A /* fireexplosion.scnp */,
+				9F50A9CC2245494000535F6A /* explosion.wav */,
+				9F50A9CE2245494100535F6A /* extinguish.wav */,
+				9F50A9D12245494100535F6A /* floortexture.jpg */,
+				9F50A9CB2245494000535F6A /* lava.wav */,
+				9F50A9C92245494000535F6A /* score.scnp */,
+				9F50A9CD2245494100535F6A /* smoke.png */,
+				9F50A9D22245494100535F6A /* smoke.scnp */,
+				9F50A9CF2245494100535F6A /* spark.png */,
+				9F50A9C82245494000535F6A /* starttexture.png */,
+				9F50A9C72245494000535F6A /* water.jpg */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
-				9FF96B0F223EB8B6009E1068 /* spark.png */,
-				9FF96B10223EB8B6009E1068 /* fireexplosion.scnp */,
 			);
 			path = PrivateResources;
 			sourceTree = "<group>";
@@ -285,6 +298,11 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9F50A9BB2245488A00535F6A /* Bullet.swift */,
+				9F50A9C02245488B00535F6A /* Defs.swift */,
+				9F50A9BD2245488B00535F6A /* ExplodingCube.swift */,
+				9F50A9BE2245488B00535F6A /* ExplodingCubesView.swift */,
+				9F50A9BF2245488B00535F6A /* Plane.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -306,7 +324,6 @@
 			buildPhases = (
 				5E086DD22051E35D004D8D25 /* Copy Book Contents */,
 				5E086DC62051DB17004D8D25 /* Resources */,
-				9F7CEC3E223E784B008F6D6C /* Sources */,
 			);
 			buildRules = (
 				5E086DD42051E415004D8D25 /* PBXBuildRule */,
@@ -316,7 +333,7 @@
 			);
 			name = PlaygroundBook;
 			productName = PlaygroundBook;
-			productReference = 5E086DC02051C5A7004D8D25 /* Exploding Cubes.playgroundbook */;
+			productReference = 5E086DC02051C5A7004D8D25 /* Your Floor is Lava!.playgroundbook */;
 			productType = "com.apple.product-type.bundle";
 		};
 		5EA2E3BC2056F35A00416A35 /* LiveViewTestApp */ = {
@@ -403,16 +420,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF96B11223EB8B6009E1068 /* spark.png in Resources */,
-				9FF96B18223ED3A5009E1068 /* explosion.scnp in Resources */,
-				9FF96B1C223ED6D2009E1068 /* plane_grid.png in Resources */,
-				9F452042223EB4ED0005B752 /* pew.wav in Resources */,
-				9FF96B16223EC415009E1068 /* explosion.wav in Resources */,
-				9F7CEC47223E80FA008F6D6C /* tickingbomb.wav in Resources */,
-				9FF96B1A223ED420009E1068 /* tracker.png in Resources */,
+				9F50A9DB2245494100535F6A /* spark.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				9F50A9DC2245494100535F6A /* dynamite.jpg in Resources */,
+				9F50A9D92245494100535F6A /* smoke.png in Resources */,
+				9F50A9D52245494100535F6A /* score.scnp in Resources */,
+				9F50A9D82245494100535F6A /* explosion.wav in Resources */,
+				9F50A9DD2245494100535F6A /* floortexture.jpg in Resources */,
+				9F50A9DA2245494100535F6A /* extinguish.wav in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
-				9FF96B12223EB8B6009E1068 /* fireexplosion.scnp in Resources */,
+				9F50A9E022454BB300535F6A /* tickingbomb.wav in Resources */,
+				9F50A9D62245494100535F6A /* fireexplosion.scnp in Resources */,
+				9F50A9D42245494100535F6A /* starttexture.png in Resources */,
+				9F50A9D72245494100535F6A /* lava.wav in Resources */,
+				9F50A9D32245494100535F6A /* water.jpg in Resources */,
+				9F50A9DE2245494100535F6A /* smoke.scnp in Resources */,
+				9F50A9E222454CA500535F6A /* pew.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,18 +481,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F7CEC3E223E784B008F6D6C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FF96B1E223ED752009E1068 /* Plane.swift in Sources */,
-				9FF96B14223EBC0F009E1068 /* Defs.swift in Sources */,
-				9F452040223EB1970005B752 /* Bullet.swift in Sources */,
-				9F7CEC42223E7886008F6D6C /* ExplodingCubesView.swift in Sources */,
-				9F7CEC43223E7886008F6D6C /* ExplodingCube.swift in Sources */,
+				9F50A9C32245488B00535F6A /* ExplodingCube.swift in Sources */,
+				9F50A9C42245488B00535F6A /* ExplodingCubesView.swift in Sources */,
+				9F50A9C12245488B00535F6A /* Bullet.swift in Sources */,
+				9F50A9C52245488B00535F6A /* Plane.swift in Sources */,
+				9F50A9C62245488B00535F6A /* Defs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +684,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5T9Z3WMJ28;
 				GCC_DYNAMIC_NO_PIC = NO;
 				INFOPLIST_FILE = LiveViewTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -692,7 +708,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5T9Z3WMJ28;
 				INFOPLIST_FILE = LiveViewTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

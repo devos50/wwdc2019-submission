@@ -7,7 +7,7 @@ class Bullet: SCNNode
     {
         super.init()
         let sphere = SCNSphere(radius: 0.025)
-        sphere.firstMaterial?.diffuse.contents = UIColor.red
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "water.jpg")
         self.geometry = sphere
         let shape = SCNPhysicsShape(geometry: sphere, options: nil)
         self.name = "bullet"
