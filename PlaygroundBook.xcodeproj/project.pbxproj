@@ -29,7 +29,7 @@
 		9F50A9D62245494100535F6A /* fireexplosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CA2245494000535F6A /* fireexplosion.scnp */; };
 		9F50A9D72245494100535F6A /* lava.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CB2245494000535F6A /* lava.wav */; };
 		9F50A9D82245494100535F6A /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CC2245494000535F6A /* explosion.wav */; };
-		9F50A9D92245494100535F6A /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CD2245494100535F6A /* smoke.png */; };
+		9F50A9D92245494100535F6A /* gamesmoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CD2245494100535F6A /* gamesmoke.png */; };
 		9F50A9DA2245494100535F6A /* extinguish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CE2245494100535F6A /* extinguish.wav */; };
 		9F50A9DB2245494100535F6A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9CF2245494100535F6A /* spark.png */; };
 		9F50A9DC2245494100535F6A /* dynamite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9D02245494100535F6A /* dynamite.jpg */; };
@@ -37,6 +37,23 @@
 		9F50A9DE2245494100535F6A /* smoke.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9D22245494100535F6A /* smoke.scnp */; };
 		9F50A9E022454BB300535F6A /* tickingbomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9DF22454BB300535F6A /* tickingbomb.wav */; };
 		9F50A9E222454CA500535F6A /* pew.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F50A9E122454CA500535F6A /* pew.wav */; };
+		9F50AA872246514B00535F6A /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA792246514A00535F6A /* LTEasing.swift */; };
+		9F50AA882246514B00535F6A /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA7B2246514A00535F6A /* LTMorphingLabel+Evaporate.swift */; };
+		9F50AA892246514B00535F6A /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA7C2246514A00535F6A /* LTMorphingLabel+Anvil.swift */; };
+		9F50AA8A2246514B00535F6A /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA7D2246514B00535F6A /* LTMorphingLabel.swift */; };
+		9F50AA8B2246514B00535F6A /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA7E2246514B00535F6A /* LTMorphingLabel+Burn.swift */; };
+		9F50AA8C2246514B00535F6A /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA7F2246514B00535F6A /* LTStringDiffResult.swift */; };
+		9F50AA8D2246514B00535F6A /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA802246514B00535F6A /* LTCharacterDiffResult.swift */; };
+		9F50AA8E2246514B00535F6A /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA812246514B00535F6A /* LTEmitterView.swift */; };
+		9F50AA8F2246514B00535F6A /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA822246514B00535F6A /* LTMorphingLabel+Sparkle.swift */; };
+		9F50AA902246514B00535F6A /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA832246514B00535F6A /* LTCharacterLimbo.swift */; };
+		9F50AA912246514B00535F6A /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA842246514B00535F6A /* LTMorphingLabel+Pixelate.swift */; };
+		9F50AA922246514B00535F6A /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA852246514B00535F6A /* LTMorphingEffect.swift */; };
+		9F50AA932246514B00535F6A /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50AA862246514B00535F6A /* LTMorphingLabel+Fall.swift */; };
+		9F50AA94224652A200535F6A /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50AA77224650DB00535F6A /* Fire.png */; };
+		9F50AA95224652A200535F6A /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50AA75224650DB00535F6A /* Sparkle.png */; };
+		9F50AA96224652A200535F6A /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50AA76224650DB00535F6A /* Fragment.png */; };
+		9F50AA97224652A200535F6A /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F50AA74224650DB00535F6A /* Smoke.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -137,7 +154,7 @@
 		9F50A9CA2245494000535F6A /* fireexplosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = fireexplosion.scnp; sourceTree = "<group>"; };
 		9F50A9CB2245494000535F6A /* lava.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lava.wav; sourceTree = "<group>"; };
 		9F50A9CC2245494000535F6A /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
-		9F50A9CD2245494100535F6A /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
+		9F50A9CD2245494100535F6A /* gamesmoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamesmoke.png; sourceTree = "<group>"; };
 		9F50A9CE2245494100535F6A /* extinguish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = extinguish.wav; sourceTree = "<group>"; };
 		9F50A9CF2245494100535F6A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		9F50A9D02245494100535F6A /* dynamite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dynamite.jpg; sourceTree = "<group>"; };
@@ -145,6 +162,24 @@
 		9F50A9D22245494100535F6A /* smoke.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = smoke.scnp; sourceTree = "<group>"; };
 		9F50A9DF22454BB300535F6A /* tickingbomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tickingbomb.wav; sourceTree = "<group>"; };
 		9F50A9E122454CA500535F6A /* pew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew.wav; sourceTree = "<group>"; };
+		9F50AA74224650DB00535F6A /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		9F50AA75224650DB00535F6A /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		9F50AA76224650DB00535F6A /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		9F50AA77224650DB00535F6A /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		9F50AA792246514A00535F6A /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		9F50AA7A2246514A00535F6A /* LTMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMorphingLabel.h; sourceTree = "<group>"; };
+		9F50AA7B2246514A00535F6A /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		9F50AA7C2246514A00535F6A /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		9F50AA7D2246514B00535F6A /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		9F50AA7E2246514B00535F6A /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		9F50AA7F2246514B00535F6A /* LTStringDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTStringDiffResult.swift; sourceTree = "<group>"; };
+		9F50AA802246514B00535F6A /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterDiffResult.swift; sourceTree = "<group>"; };
+		9F50AA812246514B00535F6A /* LTEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEmitterView.swift; sourceTree = "<group>"; };
+		9F50AA822246514B00535F6A /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		9F50AA832246514B00535F6A /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		9F50AA842246514B00535F6A /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		9F50AA852246514B00535F6A /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
+		9F50AA862246514B00535F6A /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +310,10 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				9F50AA77224650DB00535F6A /* Fire.png */,
+				9F50AA75224650DB00535F6A /* Sparkle.png */,
+				9F50AA76224650DB00535F6A /* Fragment.png */,
+				9F50AA74224650DB00535F6A /* Smoke.png */,
 				9F50A9E122454CA500535F6A /* pew.wav */,
 				9F50A9DF22454BB300535F6A /* tickingbomb.wav */,
 				9F50A9D02245494100535F6A /* dynamite.jpg */,
@@ -284,7 +323,7 @@
 				9F50A9D12245494100535F6A /* floortexture.jpg */,
 				9F50A9CB2245494000535F6A /* lava.wav */,
 				9F50A9C92245494000535F6A /* score.scnp */,
-				9F50A9CD2245494100535F6A /* smoke.png */,
+				9F50A9CD2245494100535F6A /* gamesmoke.png */,
 				9F50A9D22245494100535F6A /* smoke.scnp */,
 				9F50A9CF2245494100535F6A /* spark.png */,
 				9F50A9C82245494000535F6A /* starttexture.png */,
@@ -298,6 +337,7 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9F50AA782246513B00535F6A /* LTMorphingLabel */,
 				9F50A9BB2245488A00535F6A /* Bullet.swift */,
 				9F50A9C02245488B00535F6A /* Defs.swift */,
 				9F50A9BD2245488B00535F6A /* ExplodingCube.swift */,
@@ -313,6 +353,28 @@
 				5EF2F9A52054BBB200191409 /* Sources */,
 			);
 			name = "Supporting Content";
+			sourceTree = "<group>";
+		};
+		9F50AA782246513B00535F6A /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9F50AA802246514B00535F6A /* LTCharacterDiffResult.swift */,
+				9F50AA832246514B00535F6A /* LTCharacterLimbo.swift */,
+				9F50AA792246514A00535F6A /* LTEasing.swift */,
+				9F50AA812246514B00535F6A /* LTEmitterView.swift */,
+				9F50AA852246514B00535F6A /* LTMorphingEffect.swift */,
+				9F50AA7A2246514A00535F6A /* LTMorphingLabel.h */,
+				9F50AA7D2246514B00535F6A /* LTMorphingLabel.swift */,
+				9F50AA7C2246514A00535F6A /* LTMorphingLabel+Anvil.swift */,
+				9F50AA7E2246514B00535F6A /* LTMorphingLabel+Burn.swift */,
+				9F50AA7B2246514A00535F6A /* LTMorphingLabel+Evaporate.swift */,
+				9F50AA862246514B00535F6A /* LTMorphingLabel+Fall.swift */,
+				9F50AA842246514B00535F6A /* LTMorphingLabel+Pixelate.swift */,
+				9F50AA822246514B00535F6A /* LTMorphingLabel+Sparkle.swift */,
+				9F50AA7F2246514B00535F6A /* LTStringDiffResult.swift */,
+			);
+			name = LTMorphingLabel;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,10 +482,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F50AA94224652A200535F6A /* Fire.png in Resources */,
+				9F50AA95224652A200535F6A /* Sparkle.png in Resources */,
+				9F50AA96224652A200535F6A /* Fragment.png in Resources */,
+				9F50AA97224652A200535F6A /* Smoke.png in Resources */,
 				9F50A9DB2245494100535F6A /* spark.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				9F50A9DC2245494100535F6A /* dynamite.jpg in Resources */,
-				9F50A9D92245494100535F6A /* smoke.png in Resources */,
+				9F50A9D92245494100535F6A /* gamesmoke.png in Resources */,
 				9F50A9D52245494100535F6A /* score.scnp in Resources */,
 				9F50A9D82245494100535F6A /* explosion.wav in Resources */,
 				9F50A9DD2245494100535F6A /* floortexture.jpg in Resources */,
@@ -482,10 +548,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F50A9C32245488B00535F6A /* ExplodingCube.swift in Sources */,
+				9F50AA8A2246514B00535F6A /* LTMorphingLabel.swift in Sources */,
+				9F50AA902246514B00535F6A /* LTCharacterLimbo.swift in Sources */,
 				9F50A9C42245488B00535F6A /* ExplodingCubesView.swift in Sources */,
+				9F50AA912246514B00535F6A /* LTMorphingLabel+Pixelate.swift in Sources */,
+				9F50AA922246514B00535F6A /* LTMorphingEffect.swift in Sources */,
+				9F50AA8D2246514B00535F6A /* LTCharacterDiffResult.swift in Sources */,
+				9F50AA932246514B00535F6A /* LTMorphingLabel+Fall.swift in Sources */,
+				9F50AA872246514B00535F6A /* LTEasing.swift in Sources */,
 				9F50A9C12245488B00535F6A /* Bullet.swift in Sources */,
+				9F50AA8B2246514B00535F6A /* LTMorphingLabel+Burn.swift in Sources */,
+				9F50AA8E2246514B00535F6A /* LTEmitterView.swift in Sources */,
+				9F50AA8C2246514B00535F6A /* LTStringDiffResult.swift in Sources */,
 				9F50A9C52245488B00535F6A /* Plane.swift in Sources */,
 				9F50A9C62245488B00535F6A /* Defs.swift in Sources */,
+				9F50AA882246514B00535F6A /* LTMorphingLabel+Evaporate.swift in Sources */,
+				9F50AA892246514B00535F6A /* LTMorphingLabel+Anvil.swift in Sources */,
+				9F50AA8F2246514B00535F6A /* LTMorphingLabel+Sparkle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

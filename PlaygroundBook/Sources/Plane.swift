@@ -197,8 +197,8 @@ class Plane
         self.node.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
         self.node.physicsBody?.isAffectedByGravity = false
         self.node.physicsBody?.categoryBitMask = PlaneCategoryBitmask
-        self.node.physicsBody?.collisionBitMask = CubeCategoryBitmask
-        self.node.physicsBody?.contactTestBitMask = CubeCategoryBitmask
+        self.node.physicsBody?.collisionBitMask = CubeCategoryBitmask | BulletCategoryBitmask
+        self.node.physicsBody?.contactTestBitMask = CubeCategoryBitmask | BulletCategoryBitmask
     }
     
     static func makeImageFromEmoji(emoji: String) -> UIImage

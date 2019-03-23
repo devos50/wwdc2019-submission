@@ -14,8 +14,8 @@ class Bullet: SCNNode
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         self.physicsBody?.isAffectedByGravity = false
         self.physicsBody?.categoryBitMask = BulletCategoryBitmask
-        self.physicsBody?.collisionBitMask = CubeCategoryBitmask
-        self.physicsBody?.contactTestBitMask = CubeCategoryBitmask
+        self.physicsBody?.collisionBitMask = CubeCategoryBitmask | PlaneCategoryBitmask
+        self.physicsBody?.contactTestBitMask = CubeCategoryBitmask | PlaneCategoryBitmask
     }
     
     required init?(coder aDecoder: NSCoder)

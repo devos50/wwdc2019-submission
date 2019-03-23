@@ -62,6 +62,5 @@ public class ExplodingCube: SCNNode
                 self.updateTimer.invalidate()
             })
         }
-        
     }
 }

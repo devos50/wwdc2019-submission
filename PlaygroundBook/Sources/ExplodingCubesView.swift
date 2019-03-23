@@ -10,8 +10,6 @@ protocol CubeDelegate
 @available(iOS 11.0, *)
 public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContactDelegate
 {
-    var tracking = true
-    var foundSurface = false
     var trackerNode: SCNNode?
     var planes = [ARPlaneAnchor: Plane]()
     var canShootBullet = true
@@ -26,6 +24,8 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
     var timeLeftLabel: UILabel?
     var scoreLabel: UILabel?
     var findPlaneLabel: UILabel?
+    var finalScoreLabel: LTMorphingLabel?
+    var restartButton: UIButton?
     
     public override init(frame: CGRect, options: [String : Any]? = nil)
     {
@@ -51,7 +51,7 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
         self.scene = scene
         self.delegate = self
         
-        self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showPhysicsShapes];
+        //self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showPhysicsShapes];
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
@@ -75,14 +75,45 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
         timeLeftLabel?.textColor = UIColor.white
         self.addSubview(self.timeLeftLabel!)
         
-        self.findPlaneLabel = UILabel(frame: CGRect(x: 0, y: 30, width: self.frame.size.width, height: 30))
-        findPlaneLabel?.text = "Find a flat surface and press the 🔥"
+        self.findPlaneLabel = UILabel(frame: CGRect(x: 20, y: 20, width: self.frame.size.width - 40, height: 60))
+        findPlaneLabel?.text = "Find a flat surface and shoot with your extinguisher by tapping the screen!"
         findPlaneLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        findPlaneLabel?.numberOfLines = 0
+        findPlaneLabel?.lineBreakMode = .byWordWrapping
         findPlaneLabel?.textAlignment = .center
         findPlaneLabel?.textColor = UIColor.white
         self.addSubview(self.findPlaneLabel!)
         
+        self.restartButton = UIButton.init(type: .custom)
+        self.restartButton?.setTitle("Restart game", for: .normal)
+        self.restartButton?.backgroundColor = .red
+        self.restartButton?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        self.restartButton?.frame = CGRect(x: self.frame.size.width / 2 - 100, y: self.frame.size.height / 2 + 100, width: 200, height: 60)
+        self.restartButton?.isHidden = true
+        self.restartButton?.addTarget(self, action: #selector(resetWorld), for: .touchUpInside)
+        self.addSubview(self.restartButton!)
+        
         self.updateLabels()
+    }
+    
+    @objc
+    func resetWorld()
+    {
+        self.restartButton?.isHidden = true
+        self.findPlaneLabel?.isHidden = false
+        self.finalScoreLabel?.isHidden = true
+        self.finalScoreLabel = nil
+        
+        self.planes = [ARPlaneAnchor: Plane]()
+        
+        self.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+        
+        self.session.pause()
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        self.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     func getUserVector() -> (SCNVector3, SCNVector3)
@@ -113,7 +144,7 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
     @objc
     func viewTapped(sender: UITapGestureRecognizer)
     {
-        if canShootBullet && didStartGame
+        if canShootBullet
         {
             let bulletsNode = Bullet()
             bulletsNode.position = (self.pointOfView?.position)!
@@ -125,66 +156,6 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
             bulletTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer: Timer) in
                 self.canShootBullet = true
             })
-        }
-        
-        if !self.didStartGame
-        {
-            // did we tap a plane?
-            let hits = self.hitTest(sender.location(in: self), options: [SCNHitTestOption.categoryBitMask: PlaneCategoryBitmask])
-            for hit in hits
-            {
-                if hit.node.name == "plane"
-                {
-                    // which plane did we tap?
-                    for (_, plane) in self.planes
-                    {
-                        if plane.node == hit.node
-                        {
-                            self.activePlane = plane
-                        }
-                    }
-                    
-                    if let _ = self.activePlane
-                    {
-                        // remove other planes
-                        for (_, plane) in self.planes
-                        {
-                            if plane.node != self.activePlane!.node
-                            {
-                                plane.node.removeFromParentNode()
-                                plane.fireNode.removeFromParentNode()
-                            }
-                        }
-                        
-                        self.didStartGame = true
-                        self.activePlane?.startGame()
-                        
-                        // stop plane detection
-                        let configuration = ARWorldTrackingConfiguration()
-                        configuration.planeDetection = []
-                        self.session.run(configuration)
-                        
-                        self.findPlaneLabel?.isHidden = true
-                        
-                        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer: Timer) in
-                            self.scoreLabel?.isHidden = false
-                            self.timeLeftLabel?.isHidden = false
-                            
-                            self.gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer: Timer) in
-                                self.timeLeft -= 1
-                                self.timeLeftLabel?.text = "Time left: \(self.timeLeft) sec."
-                                
-                                if self.timeLeft == 0
-                                {
-                                    self.scoreLabel?.isHidden = true
-                                    self.timeLeftLabel?.isHidden = true
-                                    self.activePlane?.stopGame()
-                                }
-                            })
-                        }
-                    }
-                }
-            }
         }
     }
     
@@ -233,12 +204,6 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
             cube.parent?.runAction(SCNAction.playAudio(SCNAudioSource(fileNamed: "extinguish.wav")!, waitForCompletion: false))
             cube.removeFromParentNode()
             
-//            let particleSystem = SCNParticleSystem(named: "score", inDirectory: nil)
-//            let particleNode = SCNNode()
-//            particleNode.addParticleSystem(particleSystem!)
-//            particleNode.position = bullet.presentation.position
-//            self.scene.rootNode.addChildNode(particleNode)
-            
             if (cube as? ExplodingCube)!.isTicking { self.score += 1 }
             else { self.score += 2 }
             self.updateLabels()
@@ -248,33 +213,104 @@ public class ExplodingCubesView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContact
             let cube = contact.nodeA.name == "plane" ? (contact.nodeB as? ExplodingCube) : (contact.nodeA as? ExplodingCube)
             if !cube!.isTicking { cube?.startTicking() }
         }
+        else if (contact.nodeA.name == "plane" && contact.nodeB.name == "bullet") || (contact.nodeA.name == "bullet" && contact.nodeB.name == "plane")
+        {
+            let bullet = contact.nodeA.name == "bullet" ? contact.nodeA : contact.nodeB
+            let hitPlane = contact.nodeA.name == "bullet" ? contact.nodeB : contact.nodeA
+            
+            bullet.removeFromParentNode()
+            
+            if(self.didStartGame) { return }
+            
+            // which plane did we tap?
+            for (_, plane) in self.planes
+            {
+                if plane.node == hitPlane
+                {
+                    self.activePlane = plane
+                    break
+                }
+            }
+            
+            if let _ = self.activePlane
+            {
+                // remove other planes
+                for (_, plane) in self.planes
+                {
+                    if plane.node != self.activePlane!.node
+                    {
+                        plane.node.removeFromParentNode()
+                        plane.fireNode.removeFromParentNode()
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.startGame()
+                }
+            }
+        }
+    }
+    
+    public func startGame()
+    {
+        self.didStartGame = true
+        self.activePlane?.startGame()
+        
+        // stop plane detection
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = []
+        self.session.run(configuration)
+        
+        self.findPlaneLabel?.isHidden = true
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer: Timer) in
+            self.scoreLabel?.isHidden = false
+            self.timeLeftLabel?.isHidden = false
+            
+            self.gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer: Timer) in
+                self.timeLeft -= 1
+                self.timeLeftLabel?.text = "Time left: \(self.timeLeft) sec."
+                
+                if self.timeLeft == 0
+                {
+                    self.stopGame()
+                    timer.invalidate()
+                }
+            })
+        }
+    }
+    
+    public func stopGame()
+    {
+        self.scoreLabel?.isHidden = true
+        self.timeLeftLabel?.isHidden = true
+        self.activePlane?.stopGame()
+        self.didStartGame = false
+        
+        self.activePlane?.node.removeFromParentNode()
+        self.activePlane = nil
+        
+        DispatchQueue.main.async {
+            self.finalScoreLabel = LTMorphingLabel(frame: CGRect(x: 0, y: self.frame.size.height / 2 - 60, width: self.frame.size.width, height: 50))
+            self.finalScoreLabel?.textAlignment = .center
+            self.finalScoreLabel?.morphingEffect = .burn
+            self.finalScoreLabel?.morphingDuration = 1.5
+            self.finalScoreLabel?.text = "Score: \(self.score)"
+            self.finalScoreLabel?.font = UIFont.boldSystemFont(ofSize: 60)
+            self.finalScoreLabel?.textColor = .white
+            self.addSubview(self.finalScoreLabel!)
+            self.restartButton?.isHidden = false
+            
+            self.score = 0
+            self.timeLeft = self.gameDuration
+        }
     }
     
     public func updateLabels()
     {
         DispatchQueue.main.async
-        {
-            self.scoreLabel?.text = "Score: \(self.score)"
+            {
+                self.scoreLabel?.text = "Score: \(self.score)"
         }
     }
-    
-//    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)
-//    {
-//        guard tracking else { return }
-//        let hitTest = self.hitTest(CGPoint(x: self.frame.midX, y: self.frame.midY), types: .featurePoint)
-//        guard let result = hitTest.first else { return }
-//        let translation = SCNMatrix4(result.worldTransform)
-//        let position = SCNVector3Make(translation.m41, translation.m42, translation.m43)
-//
-//        if trackerNode == nil {
-//            let plane = SCNPlane(width: 0.15, height: 0.15)
-//            plane.firstMaterial?.diffuse.contents = UIImage(named: "tracker.png")
-//            plane.firstMaterial?.isDoubleSided = true
-//            trackerNode = SCNNode(geometry: plane)
-//            trackerNode?.eulerAngles.x = -.pi * 0.5
-//            self.scene.rootNode.addChildNode(self.trackerNode!)
-//            foundSurface = true
-//        }
-//        self.trackerNode?.position = position
-//    }
 }
